@@ -12,11 +12,36 @@ namespace selenium_practice
     {
         static void Main(string[] args)
         {
-            //string oh = System.AppDomain.CurrentDomain.BaseDirectory;//실행 경로 확인하기 위해서 이렇게 했음
-            //Console.WriteLine(oh);
-            IWebDriver driver = new ChromeDriver("..\\..\\");//Debug Release 다 가능하게 하기 위함
+            ////string oh = System.AppDomain.CurrentDomain.BaseDirectory;//실행 경로 확인하기 위해서 이렇게 했음
+            ////Console.WriteLine(oh);
+            //var chromeOptions = new ChromeOptions
+            //{
+            //    BinaryLocation = @"../../",
+            //    //IWebDriver driver = new ChromeDriver(@"C:\my\path\to\chromedriver\directory");
 
+            //DebuggerAddress = "localhost:9222"
+            //};
+
+            //chromeOptions.AddArguments(new List<string>() { "headless", "disable-gpu" });
+
+            //IWebDriver driver = new ChromeDriver(chromeOptions);//Debug Release 다 가능하게 하기 위함
+
+
+            ////var browser = new ChromeDriver(chromeOptions);
+
+            ////driver.Url = "https://www.youtube.com/?gl=KR&hl=ko";//처음 링크 유튜브
+            //driver.Url = "https://mgh3326.github.io";//처음 링크 유튜브
+            //String pageSource = driver.PageSource;
+            //Console.WriteLine(pageSource);
+            //Console.WriteLine("Finish");
+            var chromeOptions = new ChromeOptions();
+            //chromeOptions.AddArguments(new List<string>() { "no-sandbox", "headless", "disable-gpu" }); //옵션 왜 3개 인지는 모르겠는데 일단 이렇게 해야겠다.
+
+            var driver = new ChromeDriver(chromeOptions);
             driver.Url = "https://www.youtube.com/?gl=KR&hl=ko";//처음 링크 유튜브
+            String pageSource = driver.PageSource;
+            Console.WriteLine(pageSource);
+            Console.WriteLine("Finish");
         }
     }
 }
