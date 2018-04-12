@@ -37,7 +37,7 @@ namespace selenium_practice
             var chromeOptions = new ChromeOptions();
 
 
-            //chromeOptions.AddArguments(new List<string>() { "no-sandbox", "headless", "disable-gpu" }); //옵션 왜 3개 인지는 모르겠는데 일단 이렇게 해야겠다.
+            chromeOptions.AddArguments(new List<string>() { "no-sandbox", "headless", "disable-gpu" }); //옵션 왜 3개 인지는 모르겠는데 일단 이렇게 해야겠다.
 
             var driverService = ChromeDriverService.CreateDefaultService();//크롬 드라이버 경고 안뜨게 하는거 
             driverService.HideCommandPromptWindow = true;// 출처 : http://yizeng.me/2014/03/05/hide-command-prompt-window-in-selenium-webdriver-net-binding/
