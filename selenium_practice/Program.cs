@@ -47,11 +47,16 @@ namespace selenium_practice
 
 
             //driver.Url = "https://www.youtube.com/?gl=KR&hl=ko";//처음 링크 유튜브
-            driver.Url = "https://mgh3326.github.io";//처음 링크 유튜브
+            var youtube_name = "오마이걸 반하나 - 바나나 알러지 원숭이 [세로라이브] OH MY GIRL BANHANA - Banana allergy monkey";
 
-            Console.Clear();
+            string url = @"http://search.mnet.com/search/index.asp?q=" + youtube_name;
+            driver.Url = @"http://search.mnet.com/search/index.asp?q=" + youtube_name;
+
+            //Console.Clear();
             String pageSource = driver.PageSource;
-            Console.WriteLine(pageSource);
+            var ohoh = driver.FindElementByXPath("//*[@id='content_v']/div[2]/div[2]/div[2]/table/tbody/tr[1]/td[3]/div/div");
+            //Console.WriteLine(pageSource);
+            Console.WriteLine(ohoh.Text);
             Console.WriteLine("Finish");
         }
     }
